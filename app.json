@@ -2,5 +2,9 @@
   "name": "Salesforce HR Demo",
   "description": "A sample HR website that displays jobs managed in Salesforce.",
   "image": "heroku/java",
-  "addons": [ "heroku-postgresql", "herokuconnect" ]
+  "addons": [ "heroku-postgresql", "herokuconnect" ],
+  "env": {
+    "SALESFORCE_USERNAME": "",
+    "SALESFORCE_PASSWORD": "",
+  }
 }
