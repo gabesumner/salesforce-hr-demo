@@ -1,0 +1,9 @@
+This website requires that the following environment variables be set:
+
+SALESFORCE_USERNAME: user@domain.com
+SALESFORCE_PASSWORD: myPassword
+
+Optionally, if you're developing on localhost and need to connect to a remote Heroku Postgres database you can set:
+
+JDBC_STRING: jdbc:postgresql://host:port/database?user=username&password=password&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
+

@@ -3,3 +3,5 @@ target
 system.properties
 Procfile
 *.iml
+.idea
+*.swp

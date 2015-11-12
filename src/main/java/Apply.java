@@ -23,9 +23,6 @@ public class Apply {
         System.out.println("Getting authorization token ----");
         apply.getAccessToken();
 
-        System.out.println("Adding the new candidate contact ----");
-        apply.addContact();
-
         System.out.println("Adding the new job applicant ----");
         apply.addApplication();
     }
@@ -46,10 +43,10 @@ public class Apply {
         HttpPost post = new HttpPost(url);
         List<BasicNameValuePair> urlParameters = new ArrayList<>();
         urlParameters.add(new BasicNameValuePair("grant_type", "password"));
-        urlParameters.add(new BasicNameValuePair("client_id", System.getenv("CONSUMER_ID")));
-        urlParameters.add(new BasicNameValuePair("client_secret", System.getenv("CONSUMER_SECRET")));
+        urlParameters.add(new BasicNameValuePair("client_id", "3MVG9KI2HHAq33RzoM3XM1_ve.BTvmKqWf5LTX4kabKqEnLGZTqsflAw3xjTlkobXgvh8I2Sh44pQFW4tEOfK"));
+        urlParameters.add(new BasicNameValuePair("client_secret", "3631296555188794753"));
         urlParameters.add(new BasicNameValuePair("username", System.getenv("SALESFORCE_USERNAME")));
-        urlParameters.add(new BasicNameValuePair("password", System.getenv("CONSUMER_PASSWORD")));
+        urlParameters.add(new BasicNameValuePair("password", System.getenv("SALESFORCE_PASSWORD")));
 
         try {
             post.setEntity(new UrlEncodedFormEntity(urlParameters));
@@ -89,80 +86,20 @@ public class Apply {
         System.out.println("Access Token: " + AccessToken);
     }
 
-    private void addContact() {
-
-        String url = BaseUrl + "/services/data/v34.0/sobjects/contact";
-        HttpPost post = new HttpPost(url);
-        post.addHeader("Authorization", "Bearer " + AccessToken);
-        post.setHeader("Content-type", "application/json");
-
-        String[] name = Applicant.getName().split(" ", 2);
-
-        JSONObject json = new JSONObject();
-        json.put("recordtypeid", "012B00000002AdzIAE");
-        json.put("contact_type__c", "Standard Contact");
-        json.put("accountid", "001B0000004Q0KZIA0");  // This is the "Candidate Pool" id.
-        json.put("candidate_status__c", "New");
-        
-        if (name.length == 2) {
-            json.put("firstname", name[0]);
-            json.put("lastname", name[1]);
-        } else {
-            json.put("lastname", name[0]);
-        }
-
-        json.put("email", Applicant.getEmail());
-
-        System.out.println("JSON:" + json.toString());
-
-        StringEntity params = null;
-        try {
-            params = new StringEntity(json.toString());
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-        String responseBody = new String();
-        HttpClient client = HttpClientBuilder.create().build();
-        post.setEntity(params);
-        try {
-            HttpResponse send = client.execute(post);
-            System.out.println("Response Code : " + send.getStatusLine().getStatusCode());
-
-            BufferedReader rd = new BufferedReader(
-                    new InputStreamReader(send.getEntity().getContent()));
-
-            StringBuffer result = new StringBuffer();
-            String line = "";
-            while ((line = rd.readLine()) != null) {
-                result.append(line);
-            }
-
-            responseBody = result.toString();
-            System.out.println(responseBody);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        json = new JSONObject(responseBody);
-        ContactID = json.getString("id");
-        System.out.println("Contact ID: " + ContactID);
-    }
-
     private void addApplication() {
 
-        String url = BaseUrl + "/services/data/v34.0/sobjects/job_application__c";
+        String url = BaseUrl + "/services/data/v34.0/sobjects/hr_applicant__c";
         HttpPost post = new HttpPost(url);
         post.addHeader("Authorization", "Bearer " + AccessToken);
         post.setHeader("Content-type", "application/json");
 
         JSONObject json = new JSONObject();
-        json.put("candidate_contact__c", ContactID);
-        json.put("position__c", JobID);
-        json.put("cover_letter__c", Applicant.getResume());
-        json.put("region__c", "US");
-        json.put("picklist__c", "Review Resume");
+        json.put("name", Applicant.getName());
+        json.put("hr_position__c", JobID);
+        json.put("hr_email__c", Applicant.getEmail());
+        json.put("hr_resume__c", Applicant.getResume());
+        json.put("hr_location__c", "US");
+        json.put("hr_status__c", "Review Resume");
 
         System.out.println("JSON:" + json.toString());
 

@@ -11,7 +11,7 @@ public class Jobs {
         try {
             connection = getDBConnection();
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.position__c WHERE hr_status__c = 'Open - Approved'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.hr_position__c WHERE hr_status__c = 'Open - Approved'");
 
             while (rs.next()) {
                 Job job = convertResultSetToJob(rs);
@@ -35,7 +35,7 @@ public class Jobs {
 
         try {
             connection = getDBConnection();
-            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM salesforce.position__c WHERE sfid = ?");
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM salesforce.hr_position__c WHERE sfid = ?");
             stmt.setString(1, sfid);
             ResultSet rs = stmt.executeQuery();
 
@@ -75,7 +75,7 @@ public class Jobs {
             job.setSFid(rs.getString("sfid"));
             job.setName(rs.getString("name"));
             job.setLocation(rs.getString("hr_location__c"));
-            job.setDescription(rs.getString("hr_job_description__c"));
+            job.setDescription(rs.getString("hr_description__c"));
         } catch (Exception e) {
             System.out.println(e.toString());
             return job;
