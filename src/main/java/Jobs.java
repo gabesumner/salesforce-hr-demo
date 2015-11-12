@@ -1,3 +1,4 @@
+import java.net.URI;
 import java.sql.*;
 import java.util.ArrayList;
 import com.heroku.sdk.jdbc.DatabaseUrl;
@@ -57,12 +58,12 @@ public class Jobs {
     private static Connection getDBConnection() {
         Connection connection = null;
         try {
-            if (System.getenv("JDBC_STRING") != null) {
-                // Example: jdbc:postgresql://instance.amazonaws.com:5432/database?user=username&password=pass&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
-                connection = DriverManager.getConnection(System.getenv("JDBC_STRING"));
-            } else {
-                connection = DatabaseUrl.extract().getConnection();
-            }
+            URI dbUri = new URI(System.getenv("DATABASE_URL"));
+            String username = dbUri.getUserInfo().split(":")[0];
+            String password = dbUri.getUserInfo().split(":")[1];
+            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?user=" + username + "&password=" + password + "&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
+            connection = DriverManager.getConnection(dbUrl);
+
         } catch (Exception e) {
             System.out.println(e.toString());
         }
