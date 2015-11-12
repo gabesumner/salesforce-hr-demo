@@ -10,7 +10,7 @@
 
 5. Give your new app a name (*this name will become part of the URL, example http://my-app-name.herokuapp.com*). Then use the **SALESFORCE_USERNAME** and **SALESFORCE_PASSWORD** Config Variables to enter the login credentials for your Salesforce Org (the same credentials used in Step 1).
 
-6. Click the **Deploy for Free** button, wait for the deployment process to finish, then click *Manage App*.
+6. Click the **Deploy for Free** button, wait for the deployment process to finish, then click **Manage App**.
 
 7. Click **Heroku Connect** then click **Setup Connection** to connect Heroku to your Salesforce Org. Click **Next** then select **Production** and click **Authorize**. Login to your Salesforce Org and authorize Heroku Connect to access your org's data.
 
