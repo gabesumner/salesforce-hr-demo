@@ -5,6 +5,6 @@
   "addons": [ "heroku-postgresql", "herokuconnect" ],
   "env": {
     "SALESFORCE_USERNAME": "",
-    "SALESFORCE_PASSWORD": "",
+    "SALESFORCE_PASSWORD": ""
   }
 }
