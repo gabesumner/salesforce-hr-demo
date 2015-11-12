@@ -1,0 +1,227 @@
+body {
+    height: 100%;
+    background-color: #222;
+}
+
+.body-wrapper {
+    background-color: white;
+}
+
+.jumbotron {
+  background-color: white;
+  margin-bottom: 0;
+  padding-bottom: 15px;
+}
+
+  @media (min-width: 1200px) {
+      .container{
+          max-width: 900px;
+      }
+  }
+
+
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    text-shadow: 2px 2px #000000;
+    position: relative;
+}
+.homepage-hero-module .no-video .video-container video,
+.homepage-hero-module .touch .video-container video {
+    display: none;
+}
+.homepage-hero-module .no-video .video-container .poster,
+.homepage-hero-module .touch .video-container .poster {
+    display: block !important;
+}
+.homepage-hero-module .video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.homepage-hero-module .video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.homepage-hero-module .video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.homepage-hero-module .video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.homepage-hero-module .video-container video.fillWidth {
+    width: 100%;
+}
+
+.homepage-hero-module .video-container .title-container {
+    z-index: 1000;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.homepage-hero-module .title-container h1 {
+    font-size: 90px;
+}
+
+.homepage-hero-module .title-container p {
+    font-size: 30px;
+}
+
+.navbar .container {
+  position: relative;
+}
+
+.navbar-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar a.logo {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10px;
+    margin: auto;
+}
+
+ul.navbar-center {
+    padding-left: 25%;
+}
+
+.jobsList {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+ul.jobsList li {
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 20px;
+    width: 267px;
+    border: #999999 1px solid;
+    vertical-align: top;
+    height: 150px;
+    padding: 15px;
+    margin: 10px 10px 10px 10px;
+    cursor: pointer;
+
+}
+
+.tile {
+  -webkit-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.tile:hover,
+.tile:active,
+.tile.active,
+.tile:focus,
+.tile:active:focus,
+.tile.active:focus {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+ul.jobsList .title {
+  padding: 0;
+  margin: 0;
+}
+
+ul.jobsList .title a {
+  color: black;
+}
+
+ul.jobsList .location {
+  color: #444444;
+  padding-bottom: 10px;
+}
+
+ul.jobsList .description {
+
+}
+
+.social-icons {
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    list-style-type: none;
+    width: 50px;
+}
+
+.main-container {
+  min-height: 600px;
+  padding-top: 90px;
+  padding-bottom: 30px;
+}
+
+#footer {
+  text-align: center;
+  padding-top: 20px;
+  height: 100px;
+  background-color: #222;
+  color: white;
+}
+
+.arrow-wrap {
+  position:absolute;
+  z-index:1;
+  left:50%;
+  top:-5em;
+  margin-left:-5em;
+  background:#111;
+  width:10em;
+  height:10em;
+  padding:4em 2em;
+  border-radius:50%;
+  font-size:0.5em;
+  display:block;
+  box-shadow:0px 0px 5px 0px #333;
+}
+
+.arrow {
+  float:left;
+  position:relative;
+  width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 3em 3em 0 3em;
+border-color: #ffffff transparent transparent transparent;
+  -webkit-transform:rotate(360deg)
+}
+
+.arrow:after {
+  content:'';
+  position:absolute;
+  top:-3.2em;
+  left:-3em;
+  width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 3em 3em 0 3em;
+border-color: #111 transparent transparent transparent;
+  -webkit-transform:rotate(360deg)
+}
+
+
