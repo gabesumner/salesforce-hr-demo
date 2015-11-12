@@ -7,7 +7,14 @@
 
 4. Configure Heroku Connect to connect to your Salesforce Org.
 
-5. Create a Heroku Connect mapping for the "HR_Positions" object. Check CreatedDate, HR_Description__c, HR_Location__c, HR_Status__c, Name. Select the "Streaming API".
+5. Create a Heroku Connect mapping for the "HR_Positions" object. Check the following fields:
+** CreatedDate
+** HR_Description__c
+** HR_Location__c
+** HR_Status__c
+** Name.
+
+Check the "Streaming API" checkbox.
 
 6. Click Settings for your Heroku app, create 2 new environment variables (SALESFORCE_USERNAME, SALESFORCE_PASSWORD). These variables should contain your Salesforce Org login credentials.
 

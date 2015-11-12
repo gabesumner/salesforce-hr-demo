@@ -1,7 +1,5 @@
 target
 .DS_Store
-system.properties
-Procfile
 *.iml
 .idea
 *.swp
