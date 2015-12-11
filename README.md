@@ -10,11 +10,13 @@
 
 5. Give your new app a name (*this name will become part of the URL, example http://my-app-name.herokuapp.com*). Then use the **SALESFORCE_USERNAME** and **SALESFORCE_PASSWORD** Config Variables to enter the login credentials for your Salesforce Org (the same credentials used in Step 1).
 
-6. Click the **Deploy for Free** button, wait for the deployment process to finish, then click **Manage App**.
+6. *Optionally*, set the **COMPANY_NAME** and **COMPANY_LOGO** *(ideally the company logo should have a transparent background and be 40 pixels in height)*.
 
-7. Click **Heroku Connect** then click **Setup Connection** to connect Heroku to your Salesforce Org. Click **Next** then select **Production** and click **Authorize**. Login to your Salesforce Org and authorize Heroku Connect to access your org's data.
+7. Click the **Deploy for Free** button, wait for the deployment process to finish, then click **Manage App**.
 
-8. Click the **Create Mapping** then select (or search for) **HR_Position__c**. Select the following fields:
+8. Click **Heroku Connect** then click **Setup Connection** to connect Heroku to your Salesforce Org. Click **Next** then select **Production** and click **Authorize**. Login to your Salesforce Org and authorize Heroku Connect to access your org's data.
+
+9. Click the **Create Mapping** then select (or search for) **HR_Position__c**. Select the following fields:
    - CreatedDate
    - HR_Description__c
    - HR_Location__c
@@ -23,4 +25,4 @@
 
    Check the **Streaming API** checkbox and click the **Save** button.
 
-9. You're finished and can now access your website using the URL: http://your-app-name.herokuapp.com/ *(Replace "your-app-name" with your app name. If you don't know your app name then go to http://heroku.com/ and look at your Dashboard.)*
+10. You're finished and can now access your website using the URL: http://your-app-name.herokuapp.com/ *(Replace "your-app-name" with your app name. If you don't know your app name then go to http://heroku.com/ and look at your Dashboard.)*

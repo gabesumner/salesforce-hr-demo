@@ -16,6 +16,7 @@ public class Main {
         get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("jobs", Jobs.GetJobs());
+            addGlobalAttributes(attributes);
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
 
@@ -24,6 +25,7 @@ public class Main {
             Map<String, Object> attributes = new HashMap<>();
             Job job = Jobs.GetJob(request.params(":id"));
             attributes.put("job", job);
+            addGlobalAttributes(attributes);
             return new ModelAndView(attributes, "detail.ftl");
         }, new FreeMarkerEngine());
 
@@ -32,6 +34,7 @@ public class Main {
             Map<String, Object> attributes = new HashMap<>();
             Job job = Jobs.GetJob(request.queryParams("id"));
             attributes.put("job", job);
+            addGlobalAttributes(attributes);
             return new ModelAndView(attributes, "apply.ftl");
         }, new FreeMarkerEngine());
 
@@ -45,9 +48,28 @@ public class Main {
             applicant.setResume(request.queryParams("resume"));
             Apply.ToJob(id, applicant);
             Map<String, Object> attributes = new HashMap<>();
+            addGlobalAttributes(attributes);
             return new ModelAndView(attributes, "applied.ftl");
         }, new FreeMarkerEngine());
 
+    }
+
+    private static Map<String, Object> addGlobalAttributes(Map<String, Object> attributes) {
+        String companyName = System.getenv("COMPANY_NAME");
+        String companyLogo = System.getenv("COMPANY_LOGO");
+
+        if (companyName == null || companyName == "") {
+            companyName = "CorpHub";
+        }
+
+        if (companyLogo == null || companyLogo == "") {
+            companyLogo = "/files/corphub-logo.png";
+        }
+
+        attributes.put("companyName", companyName);
+        attributes.put("companyLogo", companyLogo);
+
+        return attributes;
     }
 
 }

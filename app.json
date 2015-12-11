@@ -5,6 +5,8 @@
   "addons": [ "heroku-postgresql", "herokuconnect" ],
   "env": {
     "SALESFORCE_USERNAME": "",
-    "SALESFORCE_PASSWORD": ""
+    "SALESFORCE_PASSWORD": "",
+    "COMPANY_NAME": "CorpHub",
+    "COMPANY_LOGO": "/files/corphub-logo.png"
   }
 }

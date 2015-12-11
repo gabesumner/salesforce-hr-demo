@@ -11,15 +11,8 @@
 <div class="body-wrapper">
     <div class="jumbotron homepage-hero-module">
         <div class="video-container">
-            <!--
-            <div class="container">
-              <div><img src="/files/corphub-logo-only.png" width="190"></div>
-              <h1>Work at CorpHub</h1>
-              <p>Make an impact, win as a team and celebrate success in our fun, fast-paced environment. We're growing fast, which means unlimited opportunities for you to do your best work.</p>
-            </div>
-            -->
             <div class="title-container">
-              <h1>Work at CorpHub</h1>
+              <h1>Work at ${companyName}</h1>
               <p>Make an impact, win as a team and celebrate success in our fun, fast-paced environment. We're growing fast, which means unlimited opportunities for you to do your best work.</p>
             </div>
             <div class="filter"></div>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container">
-    <a class="logo" href="/"><img src="/files/corphub-logo.png" height="40" ></a>
+    <a class="logo" href="/"><img src="${companyLogo}" height="40" ></a>
     <ul class="nav navbar-nav navbar-center">
       <li>
         <a href="/"> Products</a>
