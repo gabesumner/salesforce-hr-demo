@@ -5,10 +5,9 @@
 1. Install the [HR Demo package](https://platform-harbor-cruise.herokuapp.com/package) in your Salesforce Org.
 
 1. Download the following CSV files, in the prescribed order, and import the data into your Salesforce Org. using [DataLoader.io](https://dataloader.io/).
-
-- Import the [Position Data](https://platform-harbor-cruise.herokuapp.com/files/position-data.csv) into the **Position** object.
-- Import the [Applicant Data](https://platform-harbor-cruise.herokuapp.com/files/applicant-data.csv) into the **Applicant** object.
-- Import the [CIO Dashboard Data](https://platform-harbor-cruise.herokuapp.com/files/cio-dashboard-data.csv) into the **CIO Dashboard Data** object.
+   - Import the [Position Data](https://platform-harbor-cruise.herokuapp.com/files/position-data.csv) into the **Position** object.
+   - Import the [Applicant Data](https://platform-harbor-cruise.herokuapp.com/files/applicant-data.csv) into the **Applicant** object.
+   - Import the [CIO Dashboard Data](https://platform-harbor-cruise.herokuapp.com/files/cio-dashboard-data.csv) into the **CIO Dashboard Data** object.
 
 1. Go to **Administer > Manage Users > Profiles**, click the **System Administrator** link (typically on the second page), scroll down and click **New** in the Login IP Ranges section: Enter **0.0.0.0** for the Start IP Address and **255.255.255.255** for the End IP Address. Click **Save**.
 
