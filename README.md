@@ -4,7 +4,7 @@
 
 1. Install the [HR Demo package](https://platform-harbor-cruise.herokuapp.com/package) in your Salesforce Org.
 
-1. Download the following CSV files, in the prescribed order, and import the data into your Salesforce Org. using [DataLoader.io](https://dataloader.io/).
+1. Download the following CSV files, in the prescribed order, and import into Salesforce using [DataLoader.io](https://dataloader.io/).
    - Import the [Position Data](https://platform-harbor-cruise.herokuapp.com/files/position-data.csv) into the **Position** object.
    - Import the [Applicant Data](https://platform-harbor-cruise.herokuapp.com/files/applicant-data.csv) into the **Applicant** object.
    - Import the [CIO Dashboard Data](https://platform-harbor-cruise.herokuapp.com/files/cio-dashboard-data.csv) into the **CIO Dashboard Data** object.
