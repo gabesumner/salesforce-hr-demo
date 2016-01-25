@@ -99,7 +99,7 @@ public class Apply {
         json.put("hr_email__c", Applicant.getEmail());
         json.put("hr_resume__c", Applicant.getResume());
         json.put("hr_location__c", "US");
-        json.put("hr_status__c", "Review Resume");
+        json.put("hr_status__c", "New");
 
         System.out.println("JSON:" + json.toString());
 
