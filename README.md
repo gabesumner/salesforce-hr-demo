@@ -2,7 +2,7 @@
 
 1. Login to your Salesforce Org using a System Administrator account or create a new Salesforce org.
 
-1. Install the [HR Demo package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000gP5f) in your Salesforce org.
+1. Install the [HR Demo package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000gPxU) in your Salesforce org.
 
 1. Download the following CSV files and import, in the prescribed order, into your Salesforce org. using [DataLoader.io](https://dataloader.io/).
    - First import the [Job Requisition Data](https://platform-harbor-cruise.herokuapp.com/files/job-requisition-data.csv) into the **Job Requisition** object.
