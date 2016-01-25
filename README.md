@@ -4,8 +4,8 @@
 
 1. Install the [HR Demo package](https://platform-harbor-cruise.herokuapp.com/package) in your Salesforce org.
 
-1. Download the following CSV files and import, in the prescribed order, into Salesforce using [DataLoader.io](https://dataloader.io/).
-   - First import the [Position Data](https://platform-harbor-cruise.herokuapp.com/files/position-data.csv) into the **Position** object.
+1. Download the following CSV files and import, in the prescribed order, into your Salesforce org. using [DataLoader.io](https://dataloader.io/).
+   - First import the [Job Requisition Data](https://platform-harbor-cruise.herokuapp.com/files/job-requisition-data.csv) into the **Job Requisition** object.
    - Then import the [Applicant Data](https://platform-harbor-cruise.herokuapp.com/files/applicant-data.csv) into the **Applicant** object.
    - Then import the [CIO Dashboard Data](https://platform-harbor-cruise.herokuapp.com/files/cio-dashboard-data.csv) into the **CIO Dashboard Data** object.
 
@@ -21,7 +21,7 @@
 
 1. Click **Heroku Connect** then click **Setup Connection** to connect Heroku to your Salesforce Org. Click **Next** then select **Production** and click **Authorize**. Login to your Salesforce Org and authorize Heroku Connect to access your org's data.
 
-1. Click the **Create Mapping** then select (or search for) **HR_Position__c**. Select the following fields:
+1. Click the **Create Mapping** then select (or search for) **HR_Job_Requisition__c**. Select the following fields:
    - CreatedDate
    - HR_Description__c
    - HR_Location__c
