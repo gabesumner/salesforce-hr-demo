@@ -1,12 +1,12 @@
 {
   "name": "Salesforce HR Demo",
-  "description": "A sample HR website that displays jobs managed in Salesforce.",
+  "description": "A sample HR website that displays job requisitions managed in Salesforce.",
   "image": "heroku/java",
   "addons": [ "heroku-postgresql", "herokuconnect" ],
   "env": {
     "SALESFORCE_USERNAME": "",
     "SALESFORCE_PASSWORD": "",
-    "COMPANY_NAME": "CorpHub",
-    "COMPANY_LOGO": "/files/corphub-logo.png"
+    "COMPANY_NAME": "Cirrus",
+    "COMPANY_LOGO": "/files/cirrus-logo.png"
   }
 }
