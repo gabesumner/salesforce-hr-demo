@@ -2,7 +2,10 @@
 
 1. Login to your Salesforce Org using a System Administrator account or create a new Salesforce org.
 
-1. Install the [HR Demo package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000gPxe) in your Salesforce org.
+1. If not already enabled, enable the Lightning Experience using the link found in the Setup section.
+
+1. Install the <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000gPxj" target="_blank">HR Demo package</a> in your Salesforce org.
+   (Install for All Users)
 
 1. Download the following CSV files and import, in the prescribed order, into your Salesforce org. using [DataLoader.io](https://dataloader.io/).
    - First import the [Job Requisition Data](https://platform-harbor-cruise.herokuapp.com/files/job-requisition-data.csv) into the **Job Requisition** object.
@@ -21,13 +24,13 @@
 
 1. Click **Heroku Connect** then click **Setup Connection** to connect Heroku to your Salesforce Org. Click **Next** then select **Production** and click **Authorize**. Login to your Salesforce Org and authorize Heroku Connect to access your org's data.
 
+1. Check the **Streaming API** checkbox and click the **Save** button.
+
 1. Click the **Create Mapping** then select (or search for) **HR_Job_Requisition__c**. Select the following fields:
    - CreatedDate
    - HR_Description__c
    - HR_Location__c
    - HR_Status__c
    - Name
-
-   Check the **Streaming API** checkbox and click the **Save** button.
 
 1. You're finished and can now access your website using the URL: http://your-app-name.herokuapp.com/ *(Replace "your-app-name" with your app name. If you don't know your app name then go to http://heroku.com/ and look at your Dashboard.)*
