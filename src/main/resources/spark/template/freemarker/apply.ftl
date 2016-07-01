@@ -43,7 +43,7 @@ function setForm() {
     dataType: 'json',
     success: function(data){
       if(!data['error']){
-        var user = data.results[0].user;
+        var user = data.results[0];
         $('#name').val(capitalize(user.name.first) + ' ' + capitalize(user.name.last));
         $('#email').val(user.email);
         $('#location').val(capitalize(user.location.city) + ", " + capitalize(user.location.state));
