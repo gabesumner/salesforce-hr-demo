@@ -34,6 +34,10 @@ public class Main {
             Map<String, Object> attributes = new HashMap<>();
             Job job = Jobs.GetJob(request.queryParams("id"));
             attributes.put("job", job);
+            attributes.put("name", String.valueOf(System.getenv("APPLICANT_NAME") != null ? String.valueOf(System.getenv("APPLICANT_NAME")) : ""));
+            attributes.put("email", String.valueOf(System.getenv("APPLICANT_EMAIL") != null ? String.valueOf(System.getenv("APPLICANT_EMAIL")) : ""));
+            attributes.put("location", String.valueOf(System.getenv("APPLICANT_LOCATION") != null ? String.valueOf(System.getenv("APPLICANT_LOCATION")) : ""));
+            attributes.put("resume", String.valueOf(System.getenv("APPLICANT_RESUME") != null ? String.valueOf(System.getenv("APPLICANT_RESUME")) : ""));
             addGlobalAttributes(attributes);
             return new ModelAndView(attributes, "apply.ftl");
         }, new FreeMarkerEngine());
