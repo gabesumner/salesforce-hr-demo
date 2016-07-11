@@ -38,10 +38,10 @@
     <script>
 
 function setForm() {
-    $('#name').val(${name});
-    $('#email').val(${email});
-    $('#location').val(${location});
-    $('#resume').val(decodeURIComponent(${resume}));
+    $('#name').val('${name}');
+    $('#email').val('${email}');
+    $('#location').val('${location}');
+    $('#resume').val(decodeURIComponent('${resume}'));
 }
 
 function capitalize(word) {
